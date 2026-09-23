@@ -282,3 +282,14 @@ footer {
         height: 240px;
     }
 }
+@keyframes subirEDescer {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Sobe 10 pixels na metade do tempo */
+    }
+    100% {
+        transform: translateY(0); /* Volta para a posição original */
+    }
+}
