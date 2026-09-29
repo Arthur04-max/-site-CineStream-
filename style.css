@@ -1,295 +1,234 @@
-/* CONFIGURAÇÕES GERAIS */
+/* RESET BÁSICO */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #0b0b0b;
-    color: white;
-    overflow-x: hidden; /* Evita barras de rolagem indesejadas por causa das animações */
+  background-color: #141414;
+  color: #fff;
+  line-height: 1.6;
 }
 
-/* NAVBAR - FLEXBOX */
+/* NAVBAR */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    background-color: #141414;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    animation: fadeInDown 0.8s ease forwards; /* Animação de entrada */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: #000;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .logo {
-    font-size: 28px;
-    font-weight: bold;
-    color: #e50914;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .logo span {
-    color: white;
+  color: #e50914;
 }
 
 .nav-links {
-    display: flex;
-    gap: 20px;
-    list-style: none;
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
 }
 
 .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s, transform 0.3s;
-    display: inline-block;
+  color: #b3b3b3;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: #e50914;
-    transform: translateY(-2px); /* Leve subida ao passar o mouse */
+  color: #fff;
 }
 
-/* HERO */
+/* HERO SECTION */
 .hero {
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    padding: 60px;
-    background: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.95),
-        rgba(0, 0, 0, 0.55),
-        rgba(0, 0, 0, 0.2)
-    ), url("https://image.tmdb.org/t/p/original/56v2KjBlU4XaOv9rVYEQypROD7P.jpg");
-    background-size: cover;
-    background-position: center;
+  height: 70vh;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(20,20,20,1)), 
+              url('https://tmdb.org') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
 }
 
 .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-    max-width: 600px;
-    animation: fadeInUp 1s ease-out forwards; /* Conteúdo surge de baixo */
+  max-width: 600px;
 }
 
 .destaque {
-    color: #e50914;
-    font-weight: bold;
-    letter-spacing: 2px;
+  color: #e50914;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
 }
 
 .hero h1 {
-    font-size: 55px;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .descricao {
-    color: #ddd;
-    line-height: 1.6;
-    font-size: 17px;
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 1.5rem;
 }
 
 .botoes {
-    display: flex;
-    gap: 15px;
-    margin-top: 10px;
+  display: flex;
+  gap: 1rem;
 }
 
 .btn {
-    border: none;
-    padding: 13px 22px;
-    border-radius: 5px;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.2s, opacity 0.2s, box-shadow 0.3s;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: opacity 0.3s;
 }
 
 .btn:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
+  opacity: 0.85;
 }
 
 .assistir {
-    background-color: white;
-    color: black;
-    animation: pulseGlow 2s infinite; /* Efeito pulsante no botão principal */
+  background-color: #fff;
+  color: #000;
 }
 
 .info {
-    background-color: #555;
-    color: white;
+  background-color: rgba(109, 109, 110, 0.7);
+  color: #fff;
 }
 
-/* CATÁLOGO - CSS GRID */
+/* CATÁLOGO */
 main {
-    padding: 40px;
+  padding: 2rem 5%;
 }
 
 main h2 {
-    margin-bottom: 25px;
-    font-size: 28px;
-    animation: fadeInUp 1s ease-out forwards;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .movie-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
 }
 
-/* CARD */
 .movie-card {
-    background-color: #1f1f23;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
-    opacity: 0;
-    animation: fadeInUp 0.8s ease-out forwards;
+  background-color: #1f1f1f;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
 }
-
-/* Delays para os cards aparecerem um depois do outro */
-.movie-card:nth-child(1) { animation-delay: 0.2s; }
-.movie-card:nth-child(2) { animation-delay: 0.3s; }
-.movie-card:nth-child(3) { animation-delay: 0.4s; }
-.movie-card:nth-child(4) { animation-delay: 0.5s; }
-.movie-card:nth-child(5) { animation-delay: 0.6s; }
-.movie-card:nth-child(6) { animation-delay: 0.7s; }
 
 .movie-card:hover {
-    transform: scale(1.05) translateY(-5px);
-    box-shadow: 0 12px 30px rgba(229, 9, 20, 0.4);
-    background-color: #26262b;
+  transform: scale(1.05);
 }
 
 .movie-card img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease; /* Transição para o zoom da imagem */
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
 }
 
-.movie-card:hover img {
-    transform: scale(1.08); /* Efeito de zoom na imagem sem sair do card */
-}
-
-/* INFORMAÇÕES DO CARD - FLEXBOX */
 .card-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px;
-    background: #1f1f23;
-    position: relative;
-    z-index: 2;
-    transition: background-color 0.4s;
-}
-
-.movie-card:hover .card-info {
-    background-color: #26262b;
+  padding: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .card-info h3 {
-    font-size: 16px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-info span {
-    color: #ffd700;
-    font-size: 14px;
-    transition: transform 0.3s ease;
+  font-size: 0.85rem;
+  color: #f5c518;
 }
 
-/* Pequena animação na estrela do card ao passar o mouse */
-.movie-card:hover .card-info span {
-    transform: scale(1.15);
-}
-
-/* RODAPÉ */
+/* FOOTER */
 footer {
+  text-align: center;
+  padding: 2rem;
+  color: #777;
+  font-size: 0.9rem;
+  border-top: 1px solid #222;
+}
+
+/* RESPONSIVIDADE (MEDIA QUERIES) */
+
+/* Para Tablets (telas até 768px) */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero {
+    height: 60vh;
+  }
+
+  .nav-links {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Para Celulares (telas até 480px) */
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+
+  .hero {
+    height: auto;
+    padding: 3rem 5%;
     text-align: center;
-    padding: 30px;
-    color: #777;
-    background-color: #141414;
-}
+  }
 
-/* DEFINIÇÕES DE ANIMAÇÕES (KEYFRAMES) */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+  .botoes {
+    flex-direction: column;
+    width: 100%;
+  }
 
-@keyframes pulseGlow {
-    0% {
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
-    }
-    70% {
-        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-    }
-}
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
 
-/* RESPONSIVIDADE */
-@media (max-width: 700px) {
-    .navbar {
-        padding: 15px 20px;
-        flex-direction: column;
-        gap: 15px;
-    }
-    .nav-links {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .hero {
-        padding: 40px 25px;
-    }
-    .hero h1 {
-        font-size: 40px;
-    }
-    main {
-        padding: 25px;
-    }
-    .movie-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-    .movie-card img {
-        height: 240px;
-    }
-}
-@keyframes subirEDescer {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px); 
-    }
-    100% {
-        transform: translateY(0); 
-    }
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards por linha no celular */
+    gap: 0.8rem;
+  }
+
+  .movie-card img {
+    height: 180px;
+  }
 }
