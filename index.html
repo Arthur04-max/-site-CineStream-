@@ -38,104 +38,116 @@
     <!-- CATÁLOGO -->
     <main>
         <h2>Filmes e Séries</h2>
-        <section class="movie-grid">
-            
+        <section class="movie-grid" id="movieGrid">
             <article class="movie-card">
-                <img src="https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg" alt="Homem-Aranha">
+                <img src="https://tmdb.org" alt="Homem-Aranha">
                 <div class="card-info">
                     <h3>Homem-Aranha</h3>
-                    <p class="genero">Ação / Aventura</p>
-                    <span>⭐ 8.2</span>
+                    <span>⭐ Gênero: Ação</span>
                 </div>
             </article>
-
             <article class="movie-card">
-                <img src="https://image.tmdb.org/t/p/w500/q719jXXEzOoYaps6babgKnONONX.jpg" alt="Interestelar">
+                <img src="https://tmdb.org" alt="Interestelar">
                 <div class="card-info">
                     <h3>Interestelar</h3>
-                    <p class="genero">Ficção Científica</p>
-                    <span>⭐ 8.7</span>
+                    <span>⭐ Gênero: Ficção</span>
                 </div>
             </article>
-
             <article class="movie-card">
-                <img src="https://image.tmdb.org/t/p/w500/1XDDXPXGiI8id7MrUxK36ke7gkX.jpg" alt="Avatar">
+                <img src="https://tmdb.org" alt="Avatar">
                 <div class="card-info">
                     <h3>Avatar</h3>
-                    <p class="genero">Ficção / Aventura</p>
-                    <span>⭐ 8.0</span>
+                    <span>⭐ Gênero: Ficção</span>
                 </div>
             </article>
-
             <article class="movie-card">
-                <img src="https://image.tmdb.org/t/p/w500/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg" alt="Harry Potter">
+                <img src="https://tmdb.org" alt="Harry Potter">
                 <div class="card-info">
                     <h3>Harry Potter</h3>
-                    <p class="genero">Fantasia / Magia</p>
-                    <span>⭐ 8.6</span>
+                    <span>⭐ Gênero: Fantasia</span>
                 </div>
             </article>
-
             <article class="movie-card">
-                <img src="https://image.tmdb.org/t/p/w500/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg" alt="Star Wars">
+                <img src="https://tmdb.org" alt="Star Wars">
                 <div class="card-info">
                     <h3>Star Wars</h3>
-                    <p class="genero">Ópera Espacial</p>
-                    <span>⭐ 8.5</span>
+                    <span>⭐ Gênero: Ficção</span>
                 </div>
             </article>
-
             <article class="movie-card">
-                <img src="https://image.tmdb.org/t/p/w500/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg" alt="Doutor Estranho">
+                <img src="https://tmdb.org" alt="Doutor Estranho">
                 <div class="card-info">
                     <h3>Doutor Estranho</h3>
-                    <p class="genero">Ação / Fantasia</p>
-                    <span>⭐ 7.8</span>
+                    <span>⭐ Gênero: Magia</span>
                 </div>
             </article>
-
-            <!-- NOVOS FILMES ADICIONADOS -->
-            <article class="movie-card">
-                <img src="https://tmdb.org" alt="Batman: O Cavaleiro das Trevas">
-                <div class="card-info">
-                    <h3>O Cavaleiro das Trevas</h3>
-                    <p class="genero">Ação / Crime</p>
-                    <span>⭐ 8.9</span>
-                </div>
-            </article>
-
-            <article class="movie-card">
-                <img src="https://tmdb.org" alt="O Rei Leão">
-                <div class="card-info">
-                    <h3>O Rei Leão</h3>
-                    <p class="genero">Animação / Drama</p>
-                    <span>⭐ 8.3</span>
-                </div>
-            </article>
-
-            <article class="movie-card">
-                <img src="https://tmdb.org" alt="Invocação do Mal">
-                <div class="card-info">
-                    <h3>Invocação do Mal</h3>
-                    <p class="genero">Terror / Suspense</p>
-                    <span>⭐ 7.5</span>
-                </div>
-            </article>
-
-            <article class="movie-card">
-                <img src="https://tmdb.org" alt="Vingadores: Ultimato">
-                <div class="card-info">
-                    <h3>Vingadores: Ultimato</h3>
-                    <p class="genero">Ação / Ficção</p>
-                    <span>⭐ 8.3</span>
-                </div>
-            </article>
-
         </section>
     </main>
+
+    <!-- BOTÃO FLUTUANTE -->
+    <button class="btn-flutuante" id="btnAbrirModal">+ Adicionar Filme</button>
+
+    <!-- MODAL DE CADASTRO -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <h2>Novo Filme</h2>
+            <form id="formFilme">
+                <div class="form-grupo">
+                    <label for="nome">Nome do Filme</label>
+                    <input type="text" id="nome" required placeholder="Ex: Batman">
+                </div>
+                <div class="form-grupo">
+                    <label for="genero">Gênero</label>
+                    <input type="text" id="genero" required placeholder="Ex: Ação">
+                </div>
+                <div class="form-grupo">
+                    <label for="imagem">URL da Imagem</label>
+                    <input type="url" id="imagem" required placeholder="https://linkdaimagem.com">
+                </div>
+                <div class="modal-botoes">
+                    <button type="button" class="btn-cancelar" id="btnFecharModal">Cancelar</button>
+                    <button type="submit" class="btn-salvar">Adicionar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <footer>
         <p>© 2026 CineStream — Projeto Front-End</p>
     </footer>
+
+    <!-- INTERAÇÃO EM JAVASCRIPT -->
+    <script>
+        const btnAbrirModal = document.getElementById('btnAbrirModal');
+        const btnFecharModal = document.getElementById('btnFecharModal');
+        const modalOverlay = document.getElementById('modalOverlay');
+        const formFilme = document.getElementById('formFilme');
+        const movieGrid = document.getElementById('movieGrid');
+
+        btnAbrirModal.addEventListener('click', () => modalOverlay.classList.add('ativo'));
+        btnFecharModal.addEventListener('click', () => modalOverlay.classList.remove('ativo'));
+
+        formFilme.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const genero = document.getElementById('genero').value;
+            const imagem = document.getElementById('imagem').value;
+
+            const novoCard = document.createElement('article');
+            novoCard.classList.add('movie-card');
+            novoCard.innerHTML = `
+                <img src="${imagem}" alt="${nome}" onerror="this.src='https://placeholder.com'">
+                <div class="card-info">
+                    <h3>${nome}</h3>
+                    <span>⭐ Gênero: ${genero}</span>
+                </div>
+            `;
+
+            movieGrid.appendChild(novoCard);
+            formFilme.reset();
+            modalOverlay.classList.remove('ativo');
+        });
+    </script>
 </body>
 </html>
