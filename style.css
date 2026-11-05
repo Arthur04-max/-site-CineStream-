@@ -232,3 +232,8 @@ footer {
     height: 180px;
   }
 }
+.card-info .genero {
+    font-size: 0.85rem;
+    color: #b3b3b3;
+    margin-top: 4px;
+}
